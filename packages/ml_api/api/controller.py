@@ -1,11 +1,8 @@
-from flask import Blueprint, request
+from flask import Blueprint, jsonify
 
-
+# Le nom 'prediction_app' doit correspondre à celui importé dans app.py
 prediction_app = Blueprint('prediction_app', __name__)
 
-
-#@prediction_app.route('/health', methods=['GET'])
-@prediction_app.route('/')
+@prediction_app.route('/health', methods=['GET'])
 def health():
-    if request.method == 'GET':
-        return 'ok'
+    return jsonify({'status': 'ok'}), 200

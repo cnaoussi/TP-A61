@@ -1,0 +1,17 @@
+import pytest
+
+from api.app import create_app
+from api.config import TestingConfig
+
+
+@pytest.fixture
+def app():
+    # On enlève "config_object=" pour passer TestingConfig directement
+    app = create_app(TestingConfig) 
+
+    with app.app_context():
+        yield app
+@pytest.fixture
+def flask_test_client(app):
+    with app.test_client() as test_client:
+        yield test_client

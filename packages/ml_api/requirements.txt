@@ -2,7 +2,7 @@
 flask==1.0.2
 # Ajoutez ou modifiez ces lignes pour stabiliser l'environnement
 Jinja2==3.0.3
-Werkzeug==2.2.3
+Werkzeug==2.0.3
 itsdangerous==2.0.1
 # local regression_model package
 # update with your local path
