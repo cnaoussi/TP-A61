@@ -1,15 +1,13 @@
 import pathlib
-import os
 import regression_model
 
-# Cette ligne est la clé : elle doit pointer vers le dossier qui contient 'trained_models'
-# Si votre structure est ROOT/regression_model/config/config.py
-# Alors .parent.parent pointe vers ROOT/regression_model/
+# 1. On récupère le chemin absolu du fichier config.py
+# 2. .parent nous donne le dossier config/
+# 3. .parent.parent nous remonte au coeur du package (le dossier regression_model source)
 PACKAGE_ROOT = pathlib.Path(__file__).resolve().parent.parent
 
 TRAINED_MODEL_DIR = PACKAGE_ROOT / "trained_models"
 DATASET_DIR = PACKAGE_ROOT / "datasets"
-
 
 # data
 TESTING_DATA_FILE = "test.csv"
