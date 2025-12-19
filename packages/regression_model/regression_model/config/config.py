@@ -3,13 +3,10 @@ import pathlib
 import regression_model
 
 
-# Dans regression_model/config/config.py
-
-# Cette méthode remonte spécifiquement d'un niveau par rapport au dossier config
-PACKAGE_ROOT = pathlib.Path(__file__).resolve().parent.parent
-
+PACKAGE_ROOT = pathlib.Path(regression_model.__file__).resolve().parent
 TRAINED_MODEL_DIR = PACKAGE_ROOT / "trained_models"
 DATASET_DIR = PACKAGE_ROOT / "datasets"
+
 # data
 TESTING_DATA_FILE = "test.csv"
 TRAINING_DATA_FILE = "train.csv"

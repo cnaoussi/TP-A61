@@ -4,12 +4,7 @@ from sklearn.pipeline import Pipeline
 
 from regression_model.config import config
 
-def load_pipeline(*, file_name: str) -> Pipeline:
-    file_path = config.TRAINED_MODEL_DIR / file_name
-    print(f"DEBUG: Tentative de chargement du modèle ici -> {file_path}") # AJOUTEZ CECI
-    saved_pipeline = joblib.load(filename=file_path)
-    return saved_pipeline
-    
+
 def load_dataset(*, file_name: str) -> pd.DataFrame:
     _data = pd.read_csv(f"{config.DATASET_DIR}/{file_name}")
     return _data
